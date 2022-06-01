@@ -37,10 +37,12 @@ end
 
 ---@class WhiteChocolateOptions
   ---@field apply_colorscheme boolean
+  ---@field invert_visual boolean
 
 ---@type WhiteChocolateOptions
 M.default_options = {
   apply_colorscheme = true,
+  invert_visual = true,
 }
 
 ---@param colorscheme_name string
@@ -71,6 +73,10 @@ local function apply_options(options)
 
   if options.apply_colorscheme then
     base16.setup(M.colorscheme_name)
+  end
+
+  if options.invert_visual then
+    vim.api.nvim_command('highlight Visual gui=inverse')
   end
 end
 
