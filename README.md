@@ -25,7 +25,7 @@ For [`vim-plug`](https://github.com/junegunn/vim-plug) you can use this:
 ```vim
 call plug#begin('~/.vim-plug')
 
-Plug 'EtiamNullam/white-chocolate.nvim', { 'branch': 'v0' }
+Plug 'EtiamNullam/white-chocolate.nvim'
 
 call plug#end()
 ```
