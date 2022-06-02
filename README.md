@@ -10,8 +10,8 @@ Every bright colorscheme that I've tried had some issues, so I've decided to mak
 - `light` - minimal performance impact
 - `functional` - does its job and nothing more
 - `familiar` - vibrant colors that you are used to: strings are green, comments are gray (but visible), functions are blue, background is white
-- `bright` - darken your screen if its blinding, nothing will blind you if everything is bright and transition will be smooth
-- `complete` - delivers a complete package together with optional 3rd-party plugin configurations
+- `bright` - dim your screen if its too much
+- `complete` - delivers a complete package together
 - `modular` - use any set of features that you like
 
 Make sure to raise an issue if you have any suggestion about how we can get closer to these goals. 
@@ -20,7 +20,7 @@ Make sure to raise an issue if you have any suggestion about how we can get clos
 
 Use your favorite plugin manager.
 
-For [`vim-plug`] you can use this:
+For [`vim-plug`](https://github.com/junegunn/vim-plug) you can use this:
 
 ```vim
 call plug#begin('~/.vim-plug')
@@ -34,9 +34,9 @@ call plug#end()
 
 You have to install them on your own.
 
-- [https://github.com/RRethy/nvim-base16](RRethy/nvim-base16) - required
+- [RRethy/nvim-base16](https://github.com/RRethy/nvim-base16) - required
 
-[`vim-plug`] snippet:
+[`vim-plug`](https://github.com/junegunn/vim-plug) snippet:
 
 ```vim
 Plug 'RRethy/nvim-base16'
@@ -48,12 +48,6 @@ Default options:
 
 ```lua
 require('white-chocolate').setup()
-```
-
-Enable all options:
-
-```lua
-require('white-chocolate').setup(true)
 ```
 
 Custom options (defaults in example):
