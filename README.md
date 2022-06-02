@@ -25,7 +25,7 @@ For [`vim-plug`](https://github.com/junegunn/vim-plug) you can use this:
 ```vim
 call plug#begin('~/.vim-plug')
 
-Plug 'EtiamNullam/white-chocolate.nvim'
+    Plug 'EtiamNullam/white-chocolate.nvim'
 
 call plug#end()
 ```
@@ -54,7 +54,7 @@ Custom options (defaults in example):
 
 ```lua
 require('white-chocolate').setup {
-    add_colorscheme = true,
+    apply_colorscheme = true,
     invert_selection = true,
     tweak_nontext = true,
     tweak_float = true,
