@@ -1,5 +1,10 @@
 local M = {}
 
+---@param message string
+function M.display_message(message)
+  vim.notify('[white-chocolate] ' .. message, vim.log.levels.WARN)
+end
+
 ---@generic T : table
 ---@param target table<string, any>|nil
 ---@param defaults T
@@ -14,7 +19,7 @@ end
 ---@param source table
 ---@param target_value any
 ---@return table
-function M.copy_keys_and_set_values_to(source, target_value)
+function M.copy_keys_and_set_values(source, target_value)
   local new_table = {}
 
   for key, _ in pairs(source) do

@@ -62,5 +62,7 @@ Custom options (defaults in example):
 require('white-chocolate').setup {
     add_colorscheme = true,
     invert_selection = true,
+    tweak_nontext = true,
+    tweak_float = true,
 }
 ```

@@ -44,8 +44,10 @@ end
   ---@field base0E string
   ---@field base0F string
 
----@type Base16.Colorscheme
-M.colors = base16.colors
+---@type Base16.Colorscheme?
+function M.get_colors()
+  return base16.colors
+end
 
 ---@return boolean
 function M.is_already_added()
