@@ -31,13 +31,17 @@ local function apply_options(options)
     colorscheme.apply()
   end
 
-  if options.invert_visual then
-    vim.api.nvim_command('highlight Visual gui=inverse')
-  end
-
   local colors = colorscheme.get_colors()
   local is_base16_initialized = colors ~= nil
   local modules_failed_due_to_lack_of_initialization_of_base16 = {}
+
+  if options.invert_visual then
+    if is_base16_initialized then
+      vim.api.nvim_command('highlight Visual gui=inverse guibg=' .. colors.base01)
+    else
+      table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'invert_visual')
+    end
+  end
 
 
   if options.tweak_nontext then
