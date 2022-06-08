@@ -8,6 +8,7 @@ local message_maker = require('white-chocolate.internal.message-maker')
   ---@field invert_visual boolean
   ---@field tweak_nontext boolean
   ---@field tweak_float boolean
+  ---@field tweak_matchparen boolean
 
 ---@type WhiteChocolateOptions
 M.default_options = {
@@ -15,6 +16,7 @@ M.default_options = {
   invert_visual = true,
   tweak_nontext = true,
   tweak_float = true,
+  tweak_matchparen = true,
 }
 
 ---@param options WhiteChocolateOptions
@@ -52,6 +54,14 @@ local function apply_options(options)
       vim.api.nvim_command('highlight FloatBorder guibg=' .. colors.base02)
     else
       table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'tweak_float')
+    end
+  end
+
+  if options.tweak_matchparen then
+    if is_base16_initialized then
+      vim.api.nvim_command('highlight MatchParen gui=inverse guibg=' .. colors.base00)
+    else
+      table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'tweak_matchparen')
     end
   end
 

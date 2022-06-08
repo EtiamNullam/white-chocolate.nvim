@@ -58,5 +58,6 @@ require('white-chocolate').setup {
     invert_selection = true,
     tweak_nontext = true,
     tweak_float = true,
+    tweak_matchparen = true,
 }
 ```
