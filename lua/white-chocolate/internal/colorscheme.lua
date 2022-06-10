@@ -9,19 +9,19 @@ local function create()
   return {
     base00 = '#fffdfb', -- background
     base01 = '#f2edeb', -- cursorline
-    base02 = '#dbd1cf', -- select
+    base02 = '#d3cac8', -- select
     base03 = '#b19892', -- comment
-    base04 = '#6f5c80', -- linenumber
+    base04 = '#745c89', -- linenumber
     base05 = '#61331f', -- cursor
-    base06 = '#b49e2e', -- custom1
+    base06 = '#a8a02c', -- custom1
     base07 = '#11b7ee', -- custom2
-    base08 = '#a8231c', -- red, message, error
+    base08 = '#7c1a14', -- red, message, error
     base09 = '#54c878', -- value, search
-    base0A = '#d76f22', -- search, type
+    base0A = '#be621e', -- search, type
     base0B = '#81ba01', -- green, string
     base0C = '#a54dff', -- special, telescope fuzzy
     base0D = '#345af1', -- method
-    base0E = '#e104a3', -- keyword
+    base0E = '#c70490', -- keyword
     base0F = '#6c87a3', -- slash, punctuation
   }
 end

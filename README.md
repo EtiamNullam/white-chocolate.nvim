@@ -11,6 +11,7 @@ Every bright colorscheme that I've tried had some issues, so I've decided to mak
 - `bright` - dim your screen if its too much
 - `functional` - does its job and nothing more
 - `complete` - delivers a complete package together
+- `redshift-friendly` - plays nicely with reduced blue light
 - `familiar` - vibrant colors that you are used to: strings are green, comments are gray (but visible), functions are blue, background is white
 - `modular` - use any set of features that you like
 
