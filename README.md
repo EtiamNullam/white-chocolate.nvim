@@ -1,4 +1,9 @@
-# white-chocolate.nvim
+<h1>
+  white-chocolate.nvim
+  <a href="https://github.com/EtiamNullam/white-chocolate.nvim/tags" alt="GitHub tag (latest SemVer)">
+    <img src="https://img.shields.io/github/v/tag/EtiamNullam/white-chocolate.nvim" />
+  </a>
+</h2>
 
 It's an opinionated bright theme for [`neovim`](https://neovim.io) containing my custom colorscheme and configurations for other great plugins.
 
