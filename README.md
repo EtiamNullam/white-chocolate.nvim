@@ -1,7 +1,10 @@
 <h1>
   white-chocolate.nvim
-  <a href="https://github.com/EtiamNullam/white-chocolate.nvim/tags" alt="GitHub tag (latest SemVer)">
+  <a href="https://github.com/EtiamNullam/white-chocolate.nvim/tags" alt="Latest SemVer tag">
     <img src="https://img.shields.io/github/v/tag/EtiamNullam/white-chocolate.nvim" />
+  </a>
+  <a href="LICENSE" alt="License">
+    <img src="https://img.shields.io/github/license/EtiamNullam/white-chocolate.nvim" />
   </a>
 </h2>
 
