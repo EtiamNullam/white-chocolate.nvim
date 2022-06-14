@@ -13,15 +13,15 @@ local function create()
     base03 = '#b19892', -- comment
     base04 = '#745c89', -- linenumber
     base05 = '#61331f', -- cursor
-    base06 = '#a8a02c', -- custom1
+    base06 = '#b1a600', -- custom1
     base07 = '#11b7ee', -- custom2
-    base08 = '#7c1a14', -- red, message, error
+    base08 = '#a60900', -- red, identifier, message, error
     base09 = '#54c878', -- value, search
     base0A = '#be621e', -- search, type
     base0B = '#81ba01', -- green, string
     base0C = '#a54dff', -- special, telescope fuzzy
     base0D = '#345af1', -- method
-    base0E = '#c70490', -- keyword
+    base0E = '#d600b0', -- keyword
     base0F = '#6c87a3', -- slash, punctuation
   }
 end
