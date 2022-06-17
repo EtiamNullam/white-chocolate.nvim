@@ -38,6 +38,7 @@ local function apply_options(options)
   if options.invert_visual then
     if is_base16_initialized then
       vim.api.nvim_command('highlight Visual gui=inverse guibg=' .. colors.base01)
+      vim.api.nvim_command('highlight Search gui=inverse guibg=' .. colors.base01 .. ' guifg=' .. colors.base0A)
     else
       table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'invert_visual')
     end
