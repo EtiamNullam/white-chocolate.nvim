@@ -8,8 +8,8 @@ M.name = 'white-chocolate'
 local function create()
   return {
     base00 = '#fffdfb', -- background
-    base01 = '#f2edeb', -- cursorline
-    base02 = '#d3cac8', -- select
+    base01 = '#eee9e7', -- cursorline
+    base02 = '#d3c3bf', -- select
     base03 = '#b19892', -- comment
     base04 = '#745c89', -- linenumber
     base05 = '#61331f', -- cursor
