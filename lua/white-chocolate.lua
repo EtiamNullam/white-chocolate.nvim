@@ -64,7 +64,7 @@ local function apply_options(options)
 
   if options.tweak_matchparen then
     if is_base16_initialized then
-      vim.api.nvim_command('highlight MatchParen gui=inverse guibg=' .. colors.base00)
+      vim.api.nvim_command('highlight MatchParen gui=inverse guibg=' .. colors.base01)
     else
       table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'tweak_matchparen')
     end
