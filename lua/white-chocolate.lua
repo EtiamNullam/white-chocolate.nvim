@@ -44,7 +44,6 @@ local function apply_options(options)
     end
   end
 
-
   if options.tweak_nontext then
     if is_base16_initialized then
       vim.api.nvim_command('highlight NonText ctermfg=7 guifg=' .. colors.base02)
@@ -64,7 +63,7 @@ local function apply_options(options)
 
   if options.tweak_matchparen then
     if is_base16_initialized then
-      vim.api.nvim_command('highlight MatchParen gui=inverse guibg=' .. colors.base01)
+      vim.api.nvim_command('highlight MatchParen guifg=' .. colors.base00 .. ' guibg=' .. colors.base09)
     else
       table.insert(modules_failed_due_to_lack_of_initialization_of_base16, 'tweak_matchparen')
     end
