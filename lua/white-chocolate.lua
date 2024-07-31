@@ -6,10 +6,12 @@ local M = {}
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
   ---@field tweak_hydra? boolean
+  ---@field tweak_matchparen? boolean
 
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
+  tweak_matchparen = true,
   tweak_hydra = true,
   setup_bufferline = true,
   setup_statusline = true,
