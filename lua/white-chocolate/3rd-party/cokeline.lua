@@ -36,7 +36,14 @@ local function setup(cokeline, theme_colors)
           or ''
       end,
     },
-    {
+    tab = {
+      text = function(tab)
+        if tab.is_first and tab.is_last then
+          return ''
+        end
+
+        return ' ' .. tab.index .. ' '
+      end,
       fg = function(tab)
         return tab.is_active and colors.focused
           or colors.default
@@ -68,6 +75,12 @@ local function setup(cokeline, theme_colors)
       components.unique_prefix,
       components.filename,
       components.modified_marker,
+    },
+    tabs = {
+      placement = 'right',
+      components = {
+        components.tab,
+      },
     },
   }
 
