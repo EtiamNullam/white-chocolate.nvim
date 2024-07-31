@@ -4,10 +4,12 @@ local utils = require('white-chocolate.utils')
 
 ---@class WhiteChocolateOptions
   ---@field invert_visual? boolean
+  ---@field setup_bufferline? boolean
 
 ---@type WhiteChocolateOptions
 M.default_options = {
   invert_visual = true,
+  setup_bufferline = true,
 }
 
 local function set_highlight(names, options)
@@ -436,6 +438,10 @@ local function apply_options(options)
         reverse = true,
       }
     )
+  end
+
+  if options.setup_bufferline then
+    require('white-chocolate.3rd-party.cokeline').try_setup(M.colors)
   end
 
   if options.tweak_matchparen then
