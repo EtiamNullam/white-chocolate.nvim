@@ -2,9 +2,6 @@ local M = {}
 
 local utils = require('white-chocolate.utils')
 
----@deprecated
----@alias WhiteChocolateOptions WhiteChocolate.InitOptions
-
 ---@class WhiteChocolate.InitOptions
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
