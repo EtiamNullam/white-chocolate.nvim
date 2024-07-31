@@ -6,10 +6,12 @@ local utils = require('white-chocolate.utils')
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
+  ---@field tweak_hydra? boolean
 
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
+  tweak_hydra = true,
   setup_bufferline = true,
   setup_statusline = true,
 }
@@ -440,6 +442,31 @@ local function apply_options(options)
         reverse = true,
       }
     )
+  end
+
+  if options.tweak_hydra then
+    set_highlights {
+      {
+        { 'HydraRed' },
+        { fg = colors.error }
+      },
+      {
+        { 'HydraBlue' },
+        { fg = colors.action }
+      },
+      {
+        { 'HydraAmaranth' },
+        { fg = colors.special }
+      },
+      {
+        { 'HydraTeal' },
+        { fg = colors.current }
+      },
+      {
+        { 'HydraPink' },
+        { fg = colors.key }
+      }
+    }
   end
 
   if options.setup_statusline then
