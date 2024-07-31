@@ -1,7 +1,5 @@
 local M = {}
 
-local utils = require('white-chocolate.utils')
-
 local function define_colors()
   local colors = {
     divider = { 'comment', 'cursorline' },
@@ -302,6 +300,8 @@ function M.try_setup(colors)
   if loaded then
     setup(windline, colors)
   else
+    local utils = require('white-chocolate.utils')
+
     local message = utils.assemble_missing_optional_dependency_message('windline (statusline)')
 
     utils.display_message(message)

@@ -1,6 +1,5 @@
 local M = {}
 
-local utils = require('white-chocolate.utils')
 
 ---@class WhiteChocolate.InitOptions
   ---@field invert_visual? boolean
@@ -512,8 +511,8 @@ M.colors = {
 ---@param options_or_load_all_flag? boolean | WhiteChocolate.InitOptions
 function M.setup(options_or_load_all_flag)
   local options = options_or_load_all_flag == nil and M.default_options
-    or options_or_load_all_flag == true and utils.copy_keys_and_set_values(M.default_options, true)
-    or utils.add_defaults(options_or_load_all_flag, M.default_options)
+    or options_or_load_all_flag == true and require('white-chocolate.utils').copy_keys_and_set_values(M.default_options, true)
+    or require('white-chocolate.utils').add_defaults(options_or_load_all_flag, M.default_options)
 
   vim.api.nvim_command('do ColorSchemePre')
 

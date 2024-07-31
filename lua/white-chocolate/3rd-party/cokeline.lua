@@ -1,7 +1,5 @@
 local M = {}
 
-local utils = require('white-chocolate.utils')
-
 local function setup(cokeline, theme_colors)
   local colors = {
     default = theme_colors.foreground,
@@ -94,9 +92,9 @@ function M.try_setup(colors)
   if loaded then
     setup(cokeline, colors)
   else
-    local message = utils.assemble_missing_optional_dependency_message('cokeline (bufferline)')
+    local message = require('white-chocolate.utils').assemble_missing_optional_dependency_message('cokeline (bufferline)')
 
-    utils.display_message(message)
+    require('white-chocolate.utils').display_message(message)
   end
 end
 
