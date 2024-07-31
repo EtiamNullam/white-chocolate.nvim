@@ -2,12 +2,15 @@ local M = {}
 
 local utils = require('white-chocolate.utils')
 
----@class WhiteChocolateOptions
+---@deprecated
+---@alias WhiteChocolateOptions WhiteChocolate.InitOptions
+
+---@class WhiteChocolate.InitOptions
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
 
----@type WhiteChocolateOptions
+---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
   setup_bufferline = true,
@@ -482,7 +485,7 @@ M.colors = {
   key = '#bf1ca2',
 }
 
----@param options_or_load_all_flag? boolean | WhiteChocolateOptions
+---@param options_or_load_all_flag? boolean | WhiteChocolate.InitOptions
 function M.setup(options_or_load_all_flag)
   local options = options_or_load_all_flag == nil and M.default_options
     or options_or_load_all_flag == true and utils.copy_keys_and_set_values(M.default_options, true)
