@@ -515,7 +515,12 @@ function M.setup(options_or_load_all_flag)
     or options_or_load_all_flag == true and utils.copy_keys_and_set_values(M.default_options, true)
     or utils.add_defaults(options_or_load_all_flag, M.default_options)
 
+  vim.api.nvim_command('do ColorSchemePre')
+
   apply_options(options)
+end
+
+  vim.api.nvim_command('do ColorScheme')
 end
 
 return M
