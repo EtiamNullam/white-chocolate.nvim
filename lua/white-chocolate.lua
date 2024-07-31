@@ -5,11 +5,13 @@ local utils = require('white-chocolate.utils')
 ---@class WhiteChocolateOptions
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
+  ---@field setup_statusline? boolean
 
 ---@type WhiteChocolateOptions
 M.default_options = {
   invert_visual = true,
   setup_bufferline = true,
+  setup_statusline = true,
 }
 
 local function set_highlight(names, options)
@@ -438,6 +440,10 @@ local function apply_options(options)
         reverse = true,
       }
     )
+  end
+
+  if options.setup_statusline then
+    require('white-chocolate.3rd-party.windline').try_setup(M.colors)
   end
 
   if options.setup_bufferline then
