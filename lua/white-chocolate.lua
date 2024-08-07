@@ -1,6 +1,6 @@
 local M = {}
 
-local utils = require('white-chocolate.internal.utils')
+local utils = require('white-chocolate.utils')
 
 ---@class WhiteChocolateOptions
   ---@field invert_visual? boolean
