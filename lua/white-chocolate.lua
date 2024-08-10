@@ -38,7 +38,7 @@ end
 
 ---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
-  local colors = M.colors
+  local colors = M.default_colors
 
   vim.o.background = 'light'
 
@@ -474,11 +474,11 @@ local function apply_options(options)
   }
 
   if options.setup_statusline then
-    require('white-chocolate.3rd-party.windline').try_setup(M.colors)
+    require('white-chocolate.3rd-party.windline').try_setup(M.default_colors)
   end
 
   if options.setup_bufferline then
-    require('white-chocolate.3rd-party.cokeline').try_setup(M.colors)
+    require('white-chocolate.3rd-party.cokeline').try_setup(M.default_colors)
   end
 
 end
@@ -500,7 +500,7 @@ end
   ---@field special string
   ---@field action string
   ---@field key string
-M.colors = {
+M.default_colors = {
   background = '#fffdfb',
   foreground = '#643d2c',
   cursor = '#000000',
