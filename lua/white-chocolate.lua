@@ -510,16 +510,13 @@ M.colors = {
   key = '#bf1ca2',
 }
 
----@param options_or_load_all_flag? boolean | WhiteChocolate.InitOptions
-function M.setup(options_or_load_all_flag)
-  local options = options_or_load_all_flag == nil and M.default_options
-    or options_or_load_all_flag == true and require('white-chocolate.utils').copy_keys_and_set_values(M.default_options, true)
-    or require('white-chocolate.utils').add_defaults(options_or_load_all_flag, M.default_options)
+---@param options? WhiteChocolate.InitOptions
+function M.setup(options)
+  options = vim.tbl_extend('keep', options or {}, M.default_options)
 
   vim.api.nvim_command('do ColorSchemePre')
 
   apply_options(options)
-end
 
   vim.api.nvim_command('do ColorScheme')
 end
