@@ -338,6 +338,7 @@ local function apply_options(options)
           'Directory',
           'CmpItemKindFolder',
           'Title',
+          'WarningMsg',
         },
         {
           fg = colors.change,
