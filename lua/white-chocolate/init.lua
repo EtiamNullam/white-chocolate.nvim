@@ -6,6 +6,7 @@ M.default_options = {
   invert_visual = true,
   setup_bufferline = true,
   setup_statusline = true,
+  fix_terminal_background = false,
 }
 
 ---@param names string[]
@@ -477,6 +478,29 @@ local function apply_options(options)
     require('white-chocolate.3rd-party.cokeline').try_setup(M.default_colors)
   end
 
+  -- source: https://www.reddit.com/r/neovim/comments/1ehidxy/you_can_remove_padding_around_neovim_instance
+  if options.fix_terminal_background then
+    local group = vim.api.nvim_create_augroup('WhiteChocolateFixTerminalBackground', {
+      clear = true,
+    })
+
+    vim.api.nvim_create_autocmd({
+      'UIEnter',
+      'ColorScheme',
+    }, {
+      group = group,
+      callback = function()
+        require('white-chocolate.terminal-background').fix()
+      end,
+    })
+
+    vim.api.nvim_create_autocmd('UILeave', {
+      group = group,
+      callback = function()
+        require('white-chocolate.terminal-background').revert()
+      end,
+    })
+  end
 end
 
 ---@type WhiteChocolate.ColorScheme

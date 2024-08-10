@@ -138,6 +138,7 @@ require('white-chocolate').setup {
   invert_visual = true,
   setup_bufferline = true,
   setup_statusline = true,
+  fix_terminal_background = false,
 }
 ```
 
