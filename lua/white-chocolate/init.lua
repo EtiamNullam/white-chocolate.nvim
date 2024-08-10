@@ -64,17 +64,16 @@ local function apply_options(options)
   vim.o.background = 'light'
 
   set_highlights {
-    -- main
+    {
       {
-        {
-          'Normal',
-          'CmpItemKind',
-        },
-        {
-          fg = colors.foreground,
-          bg = colors.background,
-        }
+        'Normal',
+        'CmpItemKind',
       },
+      {
+        fg = colors.foreground,
+        bg = colors.background,
+      }
+    },
     {
       {
         'Cursor',
@@ -88,9 +87,7 @@ local function apply_options(options)
     },
     {
       { 'CursorLine' },
-      {
-        bg = colors.cursorline,
-      }
+      { bg = colors.cursorline }
     },
     {
       { 'CursorLineNr' },
@@ -140,17 +137,11 @@ local function apply_options(options)
     },
     {
       { 'PmenuSbar' },
-      {
-        bg = colors.cursorline,
-      }
+      { bg = colors.cursorline }
     },
     {
-      {
-        'PmenuThumb'
-      },
-      {
-        bg = colors.cursor,
-      }
+      { 'PmenuThumb' },
+      { bg = colors.cursor }
     },
     {
       {
@@ -160,18 +151,14 @@ local function apply_options(options)
         'DiagnosticHint',
         'CmpItemKindText',
       },
-      {
-        fg = colors.comment,
-      }
+      { fg = colors.comment }
     },
     {
       {
         'SignColumn',
         'LineNr',
       },
-      {
-        bg = colors.background,
-      }
+      { bg = colors.background }
     },
     {
       {
@@ -182,265 +169,56 @@ local function apply_options(options)
       }
     },
     {
-      {
-        'FoldColumn'
-      },
+      { 'FoldColumn' },
       {
         bg = colors.background,
         fg = colors.comment,
       }
     },
-      {
-        {
-          'Todo'
-        },
-        {
-          fg = colors.change
-        }
-      },
-      {
-        {
-          'DiffAdd',
-          'diffAdded',
-        },
-        {
-          fg = colors.string,
-        }
-      },
-      {
-        {
-          'DiffChange',
-          'diffChanged',
-        },
-        {
-          fg = colors.change,
-        }
-      },
-      {
-        {
-          'DiffDelete',
-          'diffRemoved',
-        },
-        {
-          fg = colors.error,
-        }
-      },
-      {
-        {
-          'DiffText',
-        },
-        {
-          bg = colors.floating_window,
-          reverse = true,
-        }
-      },
-      -- diagnostic underlines
-        {
-          { 'DiagnosticUnderlineHint' },
-          {
-            sp = colors.floating_window,
-            underline = true,
-          }
-        },
-        {
-          { 'DiagnosticUnderlineInfo' },
-          {
-            sp = colors.info,
-            underline = true,
-          }
-        },
-        {
-          { 'DiagnosticUnderlineWarn' },
-          {
-            sp = colors.change,
-            underline = true,
-          }
-        },
-        {
-          { 'DiagnosticUnderlineError' },
-          {
-            sp = colors.error,
-            underline = true,
-          }
-        },
-      -- errors
-        {
-          {
-            'Error',
-            'ErrorMsg',
-            'NvimInternalError',
-            'DiagnosticError',
-          },
-          {
-            fg = colors.error,
-          }
-        },
-    -- data types
-      {
-        {
-          'String',
-          'CmpItemKindFile',
-        },
-        {
-          fg = colors.string,
-        }
-      },
-      {
-        {
-          'Function',
-          '@function',
-          'CmpItemKindFunction',
-          'CmpItemKindMethod',
-        },
-        {
-          fg = colors.action,
-        }
-      },
-      {
-        {
-          'Keyword',
-          'Conditional',
-          'Statement',
-          'Exception',
-          'PreProc',
-          'CmpItemKindKeyword',
-        },
-        {
-          fg = colors.key,
-        }
-      },
-      {
-        {
-          'Constant',
-          'CmpItemKindConstant',
-          'CmpItemKindEnumMember',
-          '@lsp.type.enumMember',
-        },
-        {
-          fg = colors.current,
-        }
-      },
-      {
-        {
-          '@property',
-          '@lsp.type.property',
-          'DiagnosticInfo',
-          'CmpItemKindProperty',
-        },
-        {
-          fg = colors.info
-        }
-      },
-      {
-        {
-          'Identifier',
-          'CmpItemKindVariable',
-          '@variable',
-          '@field',
-          'CmpItemKindField',
-        },
-        {
-          fg = colors.foreground,
-        }
-      },
-      {
-        {
-          'Structure',
-          'Type',
-          'DiagnosticWarn',
-          'CmpItemKindClass',
-          'CmpItemKindStruct',
-          'CmpItemKindEnum',
-          '@lsp.type.enum',
-          'Operator',
-          'CmpItemKindOperator',
-          'Directory',
-          'CmpItemKindFolder',
-          'Title',
-          'WarningMsg',
-        },
-        {
-          fg = colors.change,
-        }
-      },
-      {
-        {
-          'Special',
-          'CmpItemAbbrMatch',
-          'CmpItemAbbrMatchFuzzy',
-          '@decorator',
-          '@event',
-          'CmpItemKindEvent',
-          'CmpItemKindConstructor',
-        },
-        { fg = colors.special }
-      },
-      {
-        {
-          '@parameter',
-          '@lsp.type.parameter',
-        },
-        { fg = colors.parameter }
-      },
-      -- illuminate
-        {
-          {
-            'IlluminatedWordRead',
-            'IlluminatedWordText',
-            'IlluminatedWordWrite',
-          },
-          {
-            sp = colors.foreground,
-            underline = true,
-          }
-        },
-      -- blankline
-        {
-          {
-            'IndentBlanklineChar',
-            'IndentBlanklineSpaceChar'
-          },
-          { fg = colors.floating_window }
-        },
-      -- leap
-        {
-          { 'LeapLabelPrimary' },
-          {
-            fg = colors.background,
-            bg = colors.current,
-          },
-        },
-        {
-          { 'LeapLabelSecondary' },
-          {
-            fg = colors.background,
-            bg = colors.action,
-          },
-        },
-        {
-          { 'LeapLabelSelected' },
-          {
-            fg = colors.background,
-            bg = colors.special,
-          },
-        },
-    -- telescope
-      {
-        { 'TelescopeMatching' },
-        { fg = colors.special }
-      },
-    -- leap
-      {
-        { 'LeapBackdrop' },
-        { fg = colors.comment }
-      },
-      {
-        { 'LeapMatch' },
-        { fg = colors.cursor }
-      },
     {
-      { 'ExtraWhitespace' },
-      { bg = colors.change }
+      { 'Todo' },
+      { fg = colors.change }
+    },
+    {
+      {
+        'DiffAdd',
+        'diffAdded',
+      },
+      { fg = colors.string }
+    },
+    {
+      {
+        'DiffChange',
+        'diffChanged',
+      },
+      { fg = colors.change }
+    },
+    {
+      {
+        'DiffDelete',
+        'diffRemoved',
+      },
+      { fg = colors.error }
+    },
+    {
+      { 'DiffText' },
+      {
+        bg = colors.floating_window,
+        reverse = true,
+      }
+    },
+    {
+      { 'MatchParen' },
+      { reverse = true }
+    },
+    {
+      { 'Visual' },
+      options.invert_visual
+        and { reverse = true }
+        or {
+          fg = colors.background,
+          bg = colors.info,
+        }
     },
     {
       { '@lsp.type.comment' },
@@ -453,43 +231,211 @@ local function apply_options(options)
         bg = colors.cursorline,
       },
     },
-    -- hydra
-      {
-        { 'HydraRed' },
-        { fg = colors.error }
-      },
-      {
-        { 'HydraBlue' },
-        { fg = colors.action }
-      },
-      {
-        { 'HydraAmaranth' },
-        { fg = colors.special }
-      },
-      {
-        { 'HydraTeal' },
-        { fg = colors.current }
-      },
-      {
-        { 'HydraPink' },
-        { fg = colors.key }
-      },
     {
+      { 'DiagnosticUnderlineHint' },
       {
-        'MatchParen',
-      },
-      {
-        reverse = true,
+        sp = colors.floating_window,
+        underline = true,
       }
     },
     {
-      { 'Visual' },
-      options.invert_visual
-        and { reverse = true }
-        or {
-          fg = colors.background,
-          bg = colors.info,
-        }
+      { 'DiagnosticUnderlineInfo' },
+      {
+        sp = colors.info,
+        underline = true,
+      }
+    },
+    {
+      { 'DiagnosticUnderlineWarn' },
+      {
+        sp = colors.change,
+        underline = true,
+      }
+    },
+    {
+      { 'DiagnosticUnderlineError' },
+      {
+        sp = colors.error,
+        underline = true,
+      }
+    },
+    {
+      {
+        'Error',
+        'ErrorMsg',
+        'NvimInternalError',
+        'DiagnosticError',
+      },
+      {
+        fg = colors.error,
+      }
+    },
+    {
+      {
+        'String',
+        'CmpItemKindFile',
+      },
+      { fg = colors.string }
+    },
+    {
+      {
+        'Function',
+        '@function',
+        'CmpItemKindFunction',
+        'CmpItemKindMethod',
+      },
+      { fg = colors.action }
+    },
+    {
+      {
+        'Keyword',
+        'Conditional',
+        'Statement',
+        'Exception',
+        'PreProc',
+        'CmpItemKindKeyword',
+      },
+      { fg = colors.key }
+    },
+    {
+      {
+        'Constant',
+        'CmpItemKindConstant',
+        'CmpItemKindEnumMember',
+        '@lsp.type.enumMember',
+      },
+      { fg = colors.current }
+    },
+    {
+      {
+        '@property',
+        '@lsp.type.property',
+        'DiagnosticInfo',
+        'CmpItemKindProperty',
+      },
+      { fg = colors.info }
+    },
+    {
+      {
+        'Identifier',
+        'CmpItemKindVariable',
+        '@variable',
+        '@field',
+        'CmpItemKindField',
+      },
+      { fg = colors.foreground }
+    },
+    {
+      {
+        'Structure',
+        'Type',
+        'DiagnosticWarn',
+        'CmpItemKindClass',
+        'CmpItemKindStruct',
+        'CmpItemKindEnum',
+        '@lsp.type.enum',
+        'Operator',
+        'CmpItemKindOperator',
+        'Directory',
+        'CmpItemKindFolder',
+        'Title',
+        'WarningMsg',
+      },
+      { fg = colors.change }
+    },
+    {
+      {
+        'Special',
+        'CmpItemAbbrMatch',
+        'CmpItemAbbrMatchFuzzy',
+        '@decorator',
+        '@event',
+        'CmpItemKindEvent',
+        'CmpItemKindConstructor',
+      },
+      { fg = colors.special }
+    },
+    {
+      {
+        '@parameter',
+        '@lsp.type.parameter',
+      },
+      { fg = colors.parameter }
+    },
+    {
+      {
+        'IlluminatedWordRead',
+        'IlluminatedWordText',
+        'IlluminatedWordWrite',
+      },
+      {
+        sp = colors.foreground,
+        underline = true,
+      }
+    },
+    {
+      {
+        'IndentBlanklineChar',
+        'IndentBlanklineSpaceChar'
+      },
+      { fg = colors.floating_window }
+    },
+    {
+      { 'LeapLabelPrimary' },
+      {
+        fg = colors.background,
+        bg = colors.current,
+      },
+    },
+    {
+      { 'LeapLabelSecondary' },
+      {
+        fg = colors.background,
+        bg = colors.action,
+      },
+    },
+    {
+      { 'LeapLabelSelected' },
+      {
+        fg = colors.background,
+        bg = colors.special,
+      },
+    },
+    {
+      { 'LeapBackdrop' },
+      { fg = colors.comment }
+    },
+    {
+      { 'LeapMatch' },
+      { fg = colors.cursor }
+    },
+    {
+      { 'TelescopeMatching' },
+      { fg = colors.special }
+    },
+    {
+      { 'ExtraWhitespace' },
+      { bg = colors.change }
+    },
+    {
+      { 'HydraRed' },
+      { fg = colors.error }
+    },
+    {
+      { 'HydraBlue' },
+      { fg = colors.action }
+    },
+    {
+      { 'HydraAmaranth' },
+      { fg = colors.special }
+    },
+    {
+      { 'HydraTeal' },
+      { fg = colors.current }
+    },
+    {
+      { 'HydraPink' },
+      { fg = colors.key }
     },
   }
 
