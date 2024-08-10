@@ -180,7 +180,8 @@ It's recommended to at least pin to the recent major version, especially if you 
 
 Examples using [`lazy.nvim`](https://github.com/folke/lazy.nvim):
 
-- "I'm okay with new features, but I don't want to be disturbed by breaking changes":
+New features without breaking changes:
+
 ```lua
 {
   'EtiamNullam/white-chocolate.nvim',
@@ -191,7 +192,7 @@ Examples using [`lazy.nvim`](https://github.com/folke/lazy.nvim):
 },
 ```
 
-- "I want bugfixes only":
+Bugfixes only:
 
 ```lua
 {
@@ -203,7 +204,7 @@ Examples using [`lazy.nvim`](https://github.com/folke/lazy.nvim):
 },
 
 ```
-- "I want keep the plugin at this specific version":
+Pin to specific version:
 
 ```lua
 {
