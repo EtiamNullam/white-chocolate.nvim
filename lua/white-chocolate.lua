@@ -5,14 +5,10 @@ local M = {}
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
-  ---@field tweak_hydra? boolean
-  ---@field tweak_matchparen? boolean
 
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
-  tweak_matchparen = true,
-  tweak_hydra = true,
   setup_bufferline = true,
   setup_statusline = true,
 }
@@ -439,19 +435,7 @@ local function apply_options(options)
         bg = colors.cursorline,
       },
     },
-  }
-
-  if options.invert_visual then
-    set_highlight(
-      { 'Visual' },
-      {
-        reverse = true,
-      }
-    )
-  end
-
-  if options.tweak_hydra then
-    set_highlights {
+    -- hydra
       {
         { 'HydraRed' },
         { fg = colors.error }
@@ -471,9 +455,26 @@ local function apply_options(options)
       {
         { 'HydraPink' },
         { fg = colors.key }
+      },
+    {
+      {
+        'MatchParen',
+      },
+      {
+        reverse = true,
+        fg = colors.value,
       }
-    }
-  end
+    },
+    {
+      { 'Visual' },
+      options.invert_visual
+        and { reverse = true }
+        or {
+          fg = colors.background,
+          bg = colors.info,
+        }
+    },
+  }
 
   if options.setup_statusline then
     require('white-chocolate.3rd-party.windline').try_setup(M.colors)
@@ -483,17 +484,6 @@ local function apply_options(options)
     require('white-chocolate.3rd-party.cokeline').try_setup(M.colors)
   end
 
-  if options.tweak_matchparen then
-    set_highlight(
-      {
-        'MatchParen',
-      },
-      {
-        reverse = true,
-        fg = colors.value,
-      }
-    )
-  end
 end
 
 M.colors = {
