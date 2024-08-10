@@ -1,5 +1,6 @@
 local M = {}
 
+---@nodiscard
 local function define_colors()
   local colors = {
     divider = { 'comment', 'floating_window' },
@@ -23,6 +24,7 @@ local function define_colors()
   return colors
 end
 
+---@nodiscard
 local function build_custom_components(default_components, colors, state)
   local cache_utils = require('windline.cache_utils')
   local custom_components = {}
@@ -232,6 +234,7 @@ local function build_custom_components(default_components, colors, state)
   return custom_components
 end
 
+---@nodiscard
 local function assemble_statusline(default_components, custom_components, colors)
   return {
     filetypes = { 'default' },
