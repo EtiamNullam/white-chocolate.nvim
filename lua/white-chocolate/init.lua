@@ -25,7 +25,7 @@ local function set_highlight(names, options)
   end
 end
 
----@param highlights table<number, [string[], vim.api.keyset.highlight]>
+---@param highlights [string[], vim.api.keyset.highlight][]
 local function set_highlights(highlights)
   for _, highlight in pairs(highlights) do
     set_highlight(
