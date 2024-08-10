@@ -419,7 +419,6 @@ local function apply_options(options)
         { 'LeapMatch' },
         { fg = colors.cursor }
       },
-    -- extra whitespace
     {
       { 'ExtraWhitespace' },
       { bg = colors.change }
@@ -496,10 +495,10 @@ M.colors = {
   line_number = '#6e84ad',
   parameter = '#b1a600',
   info = '#1aa7d6',
-  error = '#da1306', -- red
+  error = '#da1306',
   current = '#69b98b',
   change = '#be621e',
-  string = '#81ba01', -- green
+  string = '#81ba01',
   special = '#a54dff',
   action = '#476cff',
   key = '#bf1ca2',
