@@ -494,11 +494,11 @@ local function apply_options(options)
   }
 
   if options.setup_statusline then
-    require('white-chocolate.3rd-party.windline').try_setup(M.default_colors)
+    require('white-chocolate.3rd-party.windline').try_setup(colors)
   end
 
   if options.setup_bufferline then
-    require('white-chocolate.3rd-party.cokeline').try_setup(M.default_colors)
+    require('white-chocolate.3rd-party.cokeline').try_setup(colors)
   end
 
   -- source: https://www.reddit.com/r/neovim/comments/1ehidxy/you_can_remove_padding_around_neovim_instance
