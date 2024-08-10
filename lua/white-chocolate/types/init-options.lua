@@ -3,3 +3,4 @@
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
   ---@field fix_terminal_background? boolean
+  ---@field color_overrides? WhiteChocolate.ColorScheme.Overrides

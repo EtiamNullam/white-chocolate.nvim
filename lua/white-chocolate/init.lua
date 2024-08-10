@@ -7,6 +7,7 @@ M.default_options = {
   setup_bufferline = true,
   setup_statusline = true,
   fix_terminal_background = false,
+  color_overrides = {},
 }
 
 ---@param names string[]
@@ -36,7 +37,9 @@ end
 
 ---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
-  local colors = M.default_colors
+  local colors = type(options.color_overrides) == 'table'
+    and vim.tbl_extend('force', M.default_colors, options.color_overrides)
+    or M.default_colors
 
   vim.o.background = 'light'
 
