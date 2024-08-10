@@ -479,7 +479,7 @@ local function apply_options(options)
 
 end
 
----@type WhiteChocolate.Theme
+---@type WhiteChocolate.ColorScheme
 M.default_colors = {
   background = '#fffdfb',
   foreground = '#643d2c',

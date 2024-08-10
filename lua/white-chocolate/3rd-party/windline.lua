@@ -267,7 +267,7 @@ local function assemble_winbar(default_components, custom_components, colors)
 end
 
 ---@param windline WindLine
----@param theme_colors WhiteChocolate.Theme
+---@param theme_colors WhiteChocolate.ColorScheme
 local function setup(windline, theme_colors)
   vim.o.laststatus = 3
 
@@ -296,7 +296,7 @@ local function setup(windline, theme_colors)
   }
 end
 
----@param colors WhiteChocolate.Theme
+---@param colors WhiteChocolate.ColorScheme
 function M.try_setup(colors)
   local loaded, windline = pcall(require, 'windline')
 

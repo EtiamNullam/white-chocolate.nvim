@@ -1,4 +1,4 @@
----@class WhiteChocolate.Theme
+---@class WhiteChocolate.ColorScheme
   ---@field background string
   ---@field foreground string
   ---@field cursor string
