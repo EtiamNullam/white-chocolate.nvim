@@ -176,11 +176,10 @@ local function build_custom_components(default_components, colors, state)
           local space_left = char_limit
 
           local line = ''
-          local line_length = 0
 
           for character in text:gmatch('.') do
             if character == newline_character then
-              line_length = line:len()
+              local line_length = line:len()
 
               space_left = space_left - line_length - 1
 
@@ -199,6 +198,8 @@ local function build_custom_components(default_components, colors, state)
               line = line .. character
             end
           end
+
+          local line_length = line:len()
 
           if line_length > 0 and line_length <= space_left then
             table.insert(lines, { line, colors.yank_preview })
