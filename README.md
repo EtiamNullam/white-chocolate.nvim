@@ -160,6 +160,37 @@ require('white-chocolate').setup {
 }
 ```
 
+### Usage
+
+As long as you run `setup()` with your preferred configuration plugin will work mostly out of the box. You only have to set mappings for switching buffers, my preference:
+
+> [!NOTE]
+> You might want to change your `<Leader>` key first, I suggest `vim.g.mapleader = ' '`.
+
+```lua
+vim.keymap.set(
+  { 'n' },
+  '<Leader>bj',
+  '<Plug>(cokeline-focus-next)<Leader>b',
+  { remap = true }
+)
+
+vim.keymap.set(
+  { 'n' },
+  '<Leader>bk',
+  '<Plug>(cokeline-focus-prev)<Leader>b',
+  { remap = true }
+)
+```
+
+#### Using color scheme
+
+You can access exposed default color scheme like this:
+
+```lua
+local white_chocolate_colorscheme = require('white-chocolate').default_colors
+```
+
 ### Updating
 
 I will try to follow [`Semantic Versioning 2.0`](https://semver.org/spec/v2.0.0.html).
