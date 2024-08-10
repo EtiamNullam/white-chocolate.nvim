@@ -1,0 +1,4 @@
+---@class WhiteChocolate.InitOptions
+  ---@field invert_visual? boolean
+  ---@field setup_bufferline? boolean
+  ---@field setup_statusline? boolean

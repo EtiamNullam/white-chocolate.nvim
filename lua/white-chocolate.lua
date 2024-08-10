@@ -1,10 +1,7 @@
 local M = {}
 
 
----@class WhiteChocolate.InitOptions
-  ---@field invert_visual? boolean
-  ---@field setup_bufferline? boolean
-  ---@field setup_statusline? boolean
+---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
   setup_bufferline = true,
@@ -482,23 +479,7 @@ local function apply_options(options)
 
 end
 
----@class WhiteChocolate.Theme
-  ---@field background string
-  ---@field foreground string
-  ---@field cursor string
-  ---@field cursorline string
-  ---@field floating_window string
-  ---@field comment string
-  ---@field line_number string
-  ---@field parameter string
-  ---@field info string
-  ---@field error string
-  ---@field current string
-  ---@field change string
-  ---@field string string
-  ---@field special string
-  ---@field action string
-  ---@field key string
+---@type WhiteChocolate.Theme
 M.default_colors = {
   background = '#fffdfb',
   foreground = '#643d2c',
@@ -520,6 +501,7 @@ M.default_colors = {
 
 ---@param options? WhiteChocolate.InitOptions
 function M.setup(options)
+  ---@type WhiteChocolate.InitOptions
   options = vim.tbl_extend('keep', options or {}, M.default_options)
 
   vim.api.nvim_command('do ColorSchemePre')

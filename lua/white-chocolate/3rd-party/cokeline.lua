@@ -1,5 +1,7 @@
 local M = {}
 
+---@param cokeline any
+---@param theme_colors WhiteChocolate.Theme
 local function setup(cokeline, theme_colors)
   local colors = {
     default = theme_colors.foreground,
@@ -86,6 +88,7 @@ local function setup(cokeline, theme_colors)
     vim.api.nvim_set_hl(0, 'TabLineFill', { bg = theme_colors.background })
 end
 
+---@param colors WhiteChocolate.Theme
 function M.try_setup(colors)
   local loaded, cokeline = pcall(require, 'cokeline')
 

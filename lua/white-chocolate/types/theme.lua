@@ -1,0 +1,17 @@
+---@class WhiteChocolate.Theme
+  ---@field background string
+  ---@field foreground string
+  ---@field cursor string
+  ---@field cursorline string
+  ---@field floating_window string
+  ---@field comment string
+  ---@field line_number string
+  ---@field parameter string
+  ---@field info string
+  ---@field error string
+  ---@field current string
+  ---@field change string
+  ---@field string string
+  ---@field special string
+  ---@field action string
+  ---@field key string
