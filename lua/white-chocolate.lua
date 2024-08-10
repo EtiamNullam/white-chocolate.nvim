@@ -459,7 +459,6 @@ local function apply_options(options)
       },
       {
         reverse = true,
-        fg = colors.value,
       }
     },
     {

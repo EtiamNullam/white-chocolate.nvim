@@ -83,7 +83,7 @@ local function setup(cokeline, theme_colors)
   }
 
   -- set tabline background
-    vim.api.nvim_set_hl(0, 'TabLineFill', { bg = theme_colors.float })
+    vim.api.nvim_set_hl(0, 'TabLineFill', { bg = theme_colors.background })
 end
 
 function M.try_setup(colors)
