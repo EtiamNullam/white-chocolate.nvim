@@ -17,6 +17,8 @@ M.default_options = {
   setup_statusline = true,
 }
 
+---@param names string[]
+---@param options vim.api.keyset.highlight
 local function set_highlight(names, options)
   local first_name = nil
 
@@ -30,6 +32,7 @@ local function set_highlight(names, options)
   end
 end
 
+---@param highlights table<number, [string[], vim.api.keyset.highlight]>
 local function set_highlights(highlights)
   for _, highlight in pairs(highlights) do
     set_highlight(
@@ -39,6 +42,7 @@ local function set_highlights(highlights)
   end
 end
 
+---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
   local colors = M.colors
 
