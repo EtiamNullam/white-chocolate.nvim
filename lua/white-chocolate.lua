@@ -5,8 +5,6 @@ local M = {}
   ---@field invert_visual? boolean
   ---@field setup_bufferline? boolean
   ---@field setup_statusline? boolean
-
----@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
   setup_bufferline = true,
