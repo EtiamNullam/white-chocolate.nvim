@@ -11,7 +11,7 @@ M.default_options = {
 }
 
 ---@type WhiteChocolate.ColorScheme
-M.default_colors = {
+M.default_colorscheme = {
   background = '#fffdfb',
   foreground = '#643d2c',
   cursor = '#000000',
@@ -58,8 +58,8 @@ end
 ---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
   local colors = type(options.color_overrides) == 'table'
-    and vim.tbl_extend('force', M.default_colors, options.color_overrides)
-    or M.default_colors
+    and vim.tbl_extend('force', M.default_colorscheme, options.color_overrides)
+    or M.default_colorscheme
 
   vim.o.background = 'light'
 
