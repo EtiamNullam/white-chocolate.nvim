@@ -1,7 +1,6 @@
 ---@class WhiteChocolate
 local M = {}
 
-
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
@@ -9,6 +8,26 @@ M.default_options = {
   setup_statusline = true,
   fix_terminal_background = false,
   color_overrides = {},
+}
+
+---@type WhiteChocolate.ColorScheme
+M.default_colors = {
+  background = '#fffdfb',
+  foreground = '#643d2c',
+  cursor = '#000000',
+  cursorline = '#eee9e7',
+  floating_window = '#e4d7d3',
+  comment = '#9d8580',
+  line_number = '#6e84ad',
+  parameter = '#b1a600',
+  info = '#1aa7d6',
+  error = '#da1306',
+  current = '#69b98b',
+  change = '#be621e',
+  string = '#81ba01',
+  special = '#a54dff',
+  action = '#476cff',
+  key = '#bf1ca2',
 }
 
 ---@param names string[]
@@ -507,25 +526,6 @@ local function apply_options(options)
   end
 end
 
----@type WhiteChocolate.ColorScheme
-M.default_colors = {
-  background = '#fffdfb',
-  foreground = '#643d2c',
-  cursor = '#000000',
-  cursorline = '#eee9e7',
-  floating_window = '#e4d7d3',
-  comment = '#9d8580',
-  line_number = '#6e84ad',
-  parameter = '#b1a600',
-  info = '#1aa7d6',
-  error = '#da1306',
-  current = '#69b98b',
-  change = '#be621e',
-  string = '#81ba01',
-  special = '#a54dff',
-  action = '#476cff',
-  key = '#bf1ca2',
-}
 
 ---@param options? WhiteChocolate.InitOptions
 function M.setup(options)
