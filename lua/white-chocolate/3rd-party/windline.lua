@@ -2,7 +2,7 @@ local M = {}
 
 local function define_colors()
   local colors = {
-    divider = { 'comment', 'cursorline' },
+    divider = { 'comment', 'floating_window' },
     yank_preview = { 'background', 'foreground' },
     yank_preview_newline = { 'background', 'string' },
     vi = {

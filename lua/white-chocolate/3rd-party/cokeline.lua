@@ -85,7 +85,7 @@ local function setup(cokeline, theme_colors)
   }
 
   -- set tabline background
-    vim.api.nvim_set_hl(0, 'TabLineFill', { bg = theme_colors.background })
+    vim.api.nvim_set_hl(0, 'TabLineFill', { bg = theme_colors.cursorline })
 end
 
 ---@param colors WhiteChocolate.ColorScheme
