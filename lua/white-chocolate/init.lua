@@ -1,6 +1,13 @@
 ---@class WhiteChocolate.Plugin
 local M = {}
 
+---@class WhiteChocolate.InitOptions
+  ---@field invert_visual? boolean
+  ---@field setup_bufferline? boolean
+  ---@field setup_statusline? boolean
+  ---@field fix_terminal_background? boolean
+  ---@field color_overrides? WhiteChocolate.ColorScheme.Overrides
+
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
@@ -58,7 +65,6 @@ local function apply_options(options)
     })
   end
 end
-
 
 ---@param options? WhiteChocolate.InitOptions
 function M.setup(options)
