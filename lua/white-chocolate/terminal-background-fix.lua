@@ -1,6 +1,6 @@
 local M = {}
 
-function M.fix()
+function M.apply()
   local background = vim.api.nvim_get_hl(0, { name = 'Normal' }).bg
 
   io.write(string.format('\027Ptmux;\027\027]11;#%06x\007\027\\', background))

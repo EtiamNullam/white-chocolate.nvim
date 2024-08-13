@@ -459,14 +459,14 @@ local function apply_options(options)
     }, {
       group = group,
       callback = function()
-        require('white-chocolate.terminal-background').fix()
+        require('white-chocolate.terminal-background-fix').apply()
       end,
     })
 
     vim.api.nvim_create_autocmd('UILeave', {
       group = group,
       callback = function()
-        require('white-chocolate.terminal-background').revert()
+        require('white-chocolate.terminal-background-fix').revert()
       end,
     })
   end
