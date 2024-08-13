@@ -10,31 +10,13 @@ M.default_options = {
   color_overrides = {},
 }
 
----@type WhiteChocolate.ColorScheme
-M.default_colorscheme = {
-  background = '#fffdfb',
-  foreground = '#643d2c',
-  cursor = '#000000',
-  cursorline = '#eee9e7',
-  floating_window = '#e4d7d3',
-  comment = '#9d8580',
-  line_number = '#6e84ad',
-  parameter = '#b1a600',
-  info = '#1aa7d6',
-  error = '#da1306',
-  current = '#69b98b',
-  change = '#be621e',
-  string = '#81ba01',
-  special = '#a54dff',
-  action = '#476cff',
-  key = '#bf1ca2',
-}
-
 ---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
+  local colorscheme = require('white-chocolate.colorscheme')
+
   local colors = type(options.color_overrides) == 'table'
-    and vim.tbl_extend('force', M.default_colorscheme, options.color_overrides)
-    or M.default_colorscheme
+    and vim.tbl_extend('force', colorscheme, options.color_overrides)
+    or colorscheme
 
   vim.o.background = 'light'
 

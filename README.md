@@ -183,12 +183,12 @@ vim.keymap.set(
 )
 ```
 
-#### Using color scheme
+#### Using theme colors
 
 You can access exposed default color scheme like this:
 
 ```lua
-local white_chocolate_colorscheme = require('white-chocolate').default_colorscheme
+local white_chocolate_colorscheme = require('white-chocolate.colorscheme')
 ```
 
 ### Updating
