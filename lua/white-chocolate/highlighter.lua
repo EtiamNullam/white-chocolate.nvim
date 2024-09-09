@@ -177,6 +177,10 @@ function M.create(colors, options)
       },
     },
     {
+      { 'LspReferenceText' },
+      { underline = true }
+    },
+    {
       { 'DiagnosticUnderlineHint' },
       {
         sp = colors.floating_window,
