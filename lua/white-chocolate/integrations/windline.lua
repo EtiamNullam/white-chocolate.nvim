@@ -197,6 +197,7 @@ local function build_custom_components(default_components, colors, state)
               or colors.yank_preview.special
 
             use_alternative_special_character_background = not use_alternative_special_character_background
+
             return color
           end
 
@@ -249,8 +250,9 @@ local function build_custom_components(default_components, colors, state)
 
         local stripped_content = remove_special_characters_excluding_newline(content)
 
-        local lines = split_to_lines(stripped_content, 50)
+        local total_space_available = math.ceil(vim.o.columns / 2)
 
+        local lines = split_to_lines(stripped_content, total_space_available)
         return lines
       end
     )
