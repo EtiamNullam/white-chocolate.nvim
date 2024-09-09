@@ -95,9 +95,7 @@ function M.try_setup(colors)
   if loaded then
     setup(cokeline, colors)
   else
-    local message = require('white-chocolate.utils').assemble_missing_optional_dependency_message('cokeline (bufferline)')
-
-    require('white-chocolate.utils').display_message(message)
+    require('white-chocolate.messenger').display_message('Missing optional dependency: noib3/cokeline.nvim')
   end
 end
 
