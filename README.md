@@ -241,7 +241,7 @@ Bugfixes only:
 ```lua
 {
   'EtiamNullam/white-chocolate.nvim',
-  branch = 'v1.0',
+  branch = 'v1.1',
   config = function()
     require('white-chocolate').setup()
   end,
@@ -253,7 +253,7 @@ Pin to a specific version:
 ```lua
 {
   'EtiamNullam/white-chocolate.nvim',
-  tag = 'v1.0.0',
+  tag = 'v1.1.0',
   config = function()
     require('white-chocolate').setup()
   end,
