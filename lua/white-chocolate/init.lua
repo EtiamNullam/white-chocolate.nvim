@@ -8,6 +8,7 @@ local M = {}
   ---@field fix_terminal_background? boolean
   ---@field use_previous_options? boolean
   ---@field apply_immediately? boolean
+  ---@field trigger_events? boolean
   ---@field color_overrides? WhiteChocolate.ColorScheme.Overrides
 
 ---@type WhiteChocolate.InitOptions
@@ -18,6 +19,7 @@ M.default_options = {
   fix_terminal_background = false,
   use_previous_options = false,
   apply_immediately = true,
+  trigger_events = true,
   color_overrides = {},
 }
 
@@ -85,11 +87,15 @@ function M.setup(options)
   options = vim.tbl_extend('keep', options, base_options)
 
   if options.apply_immediately then
-    vim.api.nvim_command('do ColorSchemePre')
+    if options.trigger_events then
+      vim.api.nvim_command('do ColorSchemePre')
+    end
 
     apply_options(options)
 
-    vim.api.nvim_command('do ColorScheme')
+    if options.trigger_events then
+      vim.api.nvim_command('do ColorScheme')
+    end
   end
 
   last_configuration = options
