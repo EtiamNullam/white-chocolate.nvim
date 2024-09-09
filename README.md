@@ -91,11 +91,11 @@ local plug = vim.fn['plug#']
 vim.call('plug#begin')
 
   plug('EtiamNullam/white-chocolate.nvim')
-    plug('windwp/windline.nvim')
-    plug('noib3/nvim-cokeline')
-      plug('nvim-lua/plenary.nvim')
-      plug('nvim-tree/nvim-web-devicons')
-      plug('stevearc/resession.nvim')
+    plug('windwp/windline.nvim') -- optional
+    plug('noib3/nvim-cokeline') -- optional
+      plug('nvim-lua/plenary.nvim') -- required for cokeline
+      plug('nvim-tree/nvim-web-devicons') -- optional
+      plug('stevearc/resession.nvim') -- optional
 
 vim.call('plug#end')
 
@@ -111,13 +111,13 @@ require('white-chocolate').setup()
     require('white-chocolate').setup()
   end,
   dependencies = {
-    { 'windwp/windline.nvim' },
+    { 'windwp/windline.nvim' }, -- optional
     {
-      'noib3/nvim-cokeline',
+      'noib3/nvim-cokeline', -- optional
       dependencies = {
-        { 'nvim-lua/plenary.nvim' },
-        { 'nvim-tree/nvim-web-devicons' },
-        { 'stevearc/resession.nvim' },
+        { 'nvim-lua/plenary.nvim' }, -- required for cokeline
+        { 'nvim-tree/nvim-web-devicons' }, -- optional
+        { 'stevearc/resession.nvim' }, -- optional
       },
     },
   },
