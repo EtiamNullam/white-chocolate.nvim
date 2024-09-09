@@ -259,7 +259,7 @@ Pin to a specific version:
 ```lua
 {
   'EtiamNullam/white-chocolate.nvim',
-  tag = 'v1.2.0',
+  tag = 'v1.2.1',
   config = function()
     require('white-chocolate').setup()
   end,
