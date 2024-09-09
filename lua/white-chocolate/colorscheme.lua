@@ -35,7 +35,7 @@
 ---@type WhiteChocolate.ColorScheme
 return {
   background = '#fffdfb',
-  foreground = '#643d2c',
+  foreground = '#794135',
   cursor = '#000000',
   cursorline = '#eee9e7',
   floating_window = '#e4d7d3',
