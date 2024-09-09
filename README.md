@@ -81,8 +81,8 @@ You have to install them if you want extra functionality.
 - [`windwp/windline.nvim`](https://github.com/windwp/windline.nvim) - `statusline`, optional, recommended
 - [`noib3/nvim-cokeline`](https://github.com/noib3/nvim-cokeline) - `bufferline + tabline`, optional, recommended
 - [`nvim-lua/plenary.nvim`](https://github.com/nvim-lua/plenary.nvim) - required dependency of `nvim-cokeline`
-- [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons) - icons in `bufferline`, optional dependency of `cokeline.nvim`, recommended
-- [`stevearc/resession.nvim`](https://github.com/stevearc/resession.nvim) - optional dependency of `cokeline.nvim`
+- [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons) - icons in `bufferline`, optional dependency of `nvim-cokeline`, recommended
+- [`stevearc/resession.nvim`](https://github.com/stevearc/resession.nvim) - optional dependency of `nvim-cokeline`
 
 #### [`vim-plug`](https://github.com/junegunn/vim-plug) snippet:
 
@@ -252,8 +252,8 @@ Bugfixes only:
     require('white-chocolate').setup()
   end,
 },
-
 ```
+
 Pin to a specific version:
 
 ```lua
