@@ -11,8 +11,8 @@ local M = {}
 ---@type WhiteChocolate.InitOptions
 M.default_options = {
   invert_visual = true,
-  setup_bufferline = true,
-  setup_statusline = true,
+  setup_bufferline = false,
+  setup_statusline = false,
   fix_terminal_background = false,
   color_overrides = {},
 }

@@ -135,10 +135,10 @@ Custom options (defaults in example):
 
 ```lua
 require('white-chocolate').setup {
-  invert_visual = true,
-  setup_bufferline = true,
-  setup_statusline = true,
-  fix_terminal_background = false,
+  invert_visual = true, -- visual mode will flip background of selected text
+  setup_bufferline = false, -- configures bufferline and tabline using optional dependency 'noib3/nvim-cokeline'
+  setup_statusline = false, -- configures statusline and winbar using 'windwp/windline.nvim'
+  fix_terminal_background = false, -- remove padding in terminal around neovim instance
   color_overrides = {
     background = '#fffdfb',
     foreground = '#643d2c',
