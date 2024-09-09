@@ -308,7 +308,7 @@ function M.create(colors, options)
     },
     {
       {
-        '@lsp.type.variable.javascript',
+        '@lsp.type.variable',
       },
       {}
     },
