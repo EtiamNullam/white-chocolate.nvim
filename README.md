@@ -40,7 +40,7 @@ Make sure to raise an issue if you have any suggestion about how we can get clos
 Arguments in favor for dark theme:
 - On OLED display every pixel can turn off separately when its completely black, this looks neat and [reduces power consumption](https://www.ifixit.com/News/16952/does-dark-mode-really-save-battery-on-your-phone).
 
-### Why it doesn't have a yellow/orange tint?
+### Why it doesn't have a stronger yellow/orange tint?
 
 It's better to remove blue light globally using system-wide tools, than for every app separately.
 
@@ -161,25 +161,39 @@ require('white-chocolate').setup {
 
 ### Usage
 
-As long as you run `setup()` with your preferred configuration plugin will work mostly out of the box. You only have to set mappings for switching buffers, my preference:
+As long as you run `setup()` with your preferred configuration plugin will work mostly out of the box.
+
+If you decide to use [`noib3/nvim-cokeline`](https://github.com/noib3/nvim-cokeline) for bufferline and tabline you might want to define mappings for switching buffers, my preference:
 
 > [!NOTE]
 > You might want to change your `<Leader>` key first, I suggest `vim.g.mapleader = ' '`.
 
 ```lua
-vim.keymap.set(
-  { 'n' },
-  '<Leader>bj',
-  '<Plug>(cokeline-focus-next)<Leader>b',
-  { remap = true }
-)
+vim.keymap.set('n', '<Leader>bj', function()
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes(
+      '<Plug>(cokeline-focus-next)<Leader>b',
+      true,
+      false,
+      true
+    ),
+    'm',
+    true
+  )
+end, { desc = 'Buffer: Go to next' })
 
-vim.keymap.set(
-  { 'n' },
-  '<Leader>bk',
-  '<Plug>(cokeline-focus-prev)<Leader>b',
-  { remap = true }
-)
+vim.keymap.set('n', '<Leader>bk', function()
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes(
+      '<Plug>(cokeline-focus-prev)<Leader>b',
+      true,
+      false,
+      true
+    ),
+    'm',
+    true
+  )
+end, { desc = 'Buffer: Go to previous' })
 ```
 
 #### Using theme colors
@@ -234,7 +248,7 @@ Bugfixes only:
 },
 
 ```
-Pin to specific version:
+Pin to a specific version:
 
 ```lua
 {
