@@ -5,7 +5,7 @@ local function define_colors()
   local colors = {
     divider = { 'comment', 'floating_window' },
     yank_preview = { 'background', 'foreground' },
-    yank_preview_newline = { 'background', 'string' },
+    yank_preview_special_character = { 'background', 'string' },
     vi = {
       normal = { 'action', 'background' },
       insert = { 'background', 'info' },
@@ -203,7 +203,7 @@ local function build_custom_components(default_components, colors, state)
                 table.insert(lines, { line, colors.yank_preview })
               end
 
-              table.insert(lines, { '↲', colors.yank_preview_newline })
+              table.insert(lines, { '↲', colors.yank_preview_special_character })
 
               line = ''
             else
@@ -215,6 +215,10 @@ local function build_custom_components(default_components, colors, state)
 
           if line_length > 0 and line_length <= space_left then
             table.insert(lines, { line, colors.yank_preview })
+          end
+
+          if #text > char_limit then
+            table.insert(lines, { '...', colors.yank_preview_special_character })
           end
 
           return lines
