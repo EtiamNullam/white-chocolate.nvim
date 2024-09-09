@@ -36,7 +36,7 @@
 return {
   background = '#fffdfb',
   foreground = '#794135',
-  cursor = '#000000',
+  cursor = '#0022aa',
   cursorline = '#eee9e7',
   floating_window = '#e4d7d3',
   comment = '#9d8580',
