@@ -146,7 +146,6 @@ require('white-chocolate').setup {
     cursorline = '#eee9e7',
     floating_window = '#e4d7d3',
     comment = '#9d8580',
-    line_number = '#6e84ad',
     parameter = '#b1a600',
     info = '#1aa7d6',
     error = '#da1306',

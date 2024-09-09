@@ -5,7 +5,6 @@
   ---@field cursorline string
   ---@field floating_window string
   ---@field comment string
-  ---@field line_number string
   ---@field parameter string
   ---@field info string
   ---@field error string
@@ -23,7 +22,6 @@
   ---@field cursorline? string
   ---@field floating_window? string
   ---@field comment? string
-  ---@field line_number? string
   ---@field parameter? string
   ---@field info? string
   ---@field error? string
@@ -42,7 +40,6 @@ return {
   cursorline = '#eee9e7',
   floating_window = '#e4d7d3',
   comment = '#9d8580',
-  line_number = '#6e84ad',
   parameter = '#b1a600',
   info = '#1aa7d6',
   error = '#da1306',

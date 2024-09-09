@@ -38,7 +38,7 @@ function M.create(colors, options)
       { 'CursorLineNr' },
       {
         bg = colors.cursorline,
-        fg = colors.line_number,
+        fg = colors.foreground,
         bold = true,
       }
     },
@@ -269,7 +269,7 @@ function M.create(colors, options)
         '@field',
         'CmpItemKindField',
       },
-      { fg = colors.line_number }
+      { fg = colors.foreground }
     },
     {
       {
