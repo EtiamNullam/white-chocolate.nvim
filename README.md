@@ -19,15 +19,16 @@ Every bright color scheme that I've tried had some issues, so I've decided to ma
 - `Simple` - both in use and development.
 - `Familiar` - provides colors that you are used to.
 - `Light` - minimal performance impact.
-- `Functional` - does its job and nothing more.
 
 Make sure to raise an issue if you have any suggestion about how we can get closer to these goals.
 
 ### Features
 
-- `Bright` - almost completely white background.
-- `Redshift-friendly` - plays nicely with reduced blue light (and green to some extend).
-- `Vibrant` - provides distinct and intense colors.
+- Almost completely white background.
+- Plays nicely with reduced blue light (and green to some extend).
+- Provides distinct and intense colors.
+- Displays yank register preview at a glance.
+- Includes optional configurations for `statusline`, `bufferline`, `tabline`, and `winbar`.
 
 ### Why not dark theme?
 
