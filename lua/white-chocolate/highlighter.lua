@@ -255,6 +255,7 @@ function M.create(colors, options)
       {
         '@property',
         '@lsp.type.property',
+        '@variable.member',
         'DiagnosticInfo',
         'CmpItemKindProperty',
       },
@@ -268,7 +269,7 @@ function M.create(colors, options)
         '@field',
         'CmpItemKindField',
       },
-      { fg = colors.foreground }
+      { fg = colors.line_number }
     },
     {
       {
@@ -295,10 +296,17 @@ function M.create(colors, options)
         'CmpItemAbbrMatchFuzzy',
         '@decorator',
         '@event',
+        '@variable.builtin',
         'CmpItemKindEvent',
         'CmpItemKindConstructor',
       },
       { fg = colors.special }
+    },
+    {
+      {
+        '@lsp.type.variable.javascript',
+      },
+      {}
     },
     {
       {
