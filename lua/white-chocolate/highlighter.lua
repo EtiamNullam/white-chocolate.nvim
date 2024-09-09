@@ -400,6 +400,34 @@ function M.create(colors, options)
       { 'HydraPink' },
       { fg = colors.key }
     },
+    {
+      { 'SpellBad' },
+      {
+        undercurl = true,
+        sp = colors.error,
+      }
+    },
+    {
+      { 'SpellCap' },
+      {
+        undercurl = true,
+        sp = colors.action,
+      }
+    },
+    {
+      { 'SpellRare' },
+      {
+        undercurl = true,
+        sp = colors.string,
+      }
+    },
+    {
+      { 'SpellLocal' },
+      {
+        undercurl = true,
+        sp = colors.special,
+      }
+    },
   }
 end
 
