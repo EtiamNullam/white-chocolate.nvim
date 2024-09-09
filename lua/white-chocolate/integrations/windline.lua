@@ -4,8 +4,11 @@ local M = {}
 local function define_colors()
   local colors = {
     divider = { 'comment', 'floating_window' },
-    yank_preview = { 'background', 'foreground' },
-    yank_preview_special_character = { 'background', 'string' },
+    yank_preview = {
+      normal = { 'background', 'foreground' },
+      special = { 'background', 'string' },
+      special_alternate = { 'background', 'parameter' },
+    },
     vi = {
       normal = { 'action', 'background' },
       insert = { 'background', 'info' },
@@ -183,6 +186,25 @@ local function build_custom_components(default_components, colors, state)
           return text:gsub('[%z\1-\9\11-\31\128-\255]', '')
         end
 
+        local yank_preview_special_color = {}
+
+        do
+          local use_alternative_special_character_background = false
+
+          yank_preview_special_color.get_next = function()
+            local color = use_alternative_special_character_background
+              and colors.yank_preview.special_alternate
+              or colors.yank_preview.special
+
+            use_alternative_special_character_background = not use_alternative_special_character_background
+            return color
+          end
+
+          yank_preview_special_color.reset = function()
+            use_alternative_special_character_background = false
+          end
+        end
+
         local function split_to_lines(text, char_limit)
           local lines = {}
           local space_left = char_limit
@@ -200,10 +222,11 @@ local function build_custom_components(default_components, colors, state)
               end
 
               if line_length > 0 then
-                table.insert(lines, { line, colors.yank_preview })
+                table.insert(lines, { line, colors.yank_preview.normal })
+                yank_preview_special_color.reset()
               end
 
-              table.insert(lines, { '↲', colors.yank_preview_special_character })
+              table.insert(lines, { ' ↲ ', yank_preview_special_color.get_next() })
 
               line = ''
             else
@@ -214,11 +237,11 @@ local function build_custom_components(default_components, colors, state)
           local line_length = line:len()
 
           if line_length > 0 and line_length <= space_left then
-            table.insert(lines, { line, colors.yank_preview })
+            table.insert(lines, { line, colors.yank_preview.normal })
           end
 
           if #text > char_limit then
-            table.insert(lines, { '...', colors.yank_preview_special_character })
+            table.insert(lines, { ' ... ', yank_preview_special_color.get_next() })
           end
 
           return lines
