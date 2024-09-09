@@ -78,9 +78,9 @@ require('white-chocolate').setup()
 
 You have to install them if you want extra functionality.
 
-- [`windwp/windline.nvim`](https://github.com/windwp/windline.nvim) - `statusline`, optional
-- [`noib3/nvim-cokeline`](https://github.com/noib3/nvim-cokeline) - `bufferline + tabline`, optional
-- [`nvim-lua/plenary.nvim`](https://github.com/nvim-lua/plenary.nvim) - required dependency of `cokeline.nvim`
+- [`windwp/windline.nvim`](https://github.com/windwp/windline.nvim) - `statusline`, optional, recommended
+- [`noib3/nvim-cokeline`](https://github.com/noib3/nvim-cokeline) - `bufferline + tabline`, optional, recommended
+- [`nvim-lua/plenary.nvim`](https://github.com/nvim-lua/plenary.nvim) - required dependency of `nvim-cokeline`
 - [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons) - icons in `bufferline`, optional dependency of `cokeline.nvim`
 - [`stevearc/resession.nvim`](https://github.com/stevearc/resession.nvim) - optional dependency of `cokeline.nvim`
 
@@ -92,8 +92,8 @@ local plug = vim.fn['plug#']
 vim.call('plug#begin')
 
   plug('EtiamNullam/white-chocolate.nvim')
-    plug('windwp/windline.nvim') -- optional
-    plug('noib3/nvim-cokeline') -- optional
+    plug('windwp/windline.nvim') -- optional, recommended
+    plug('noib3/nvim-cokeline') -- optional, recommended
       plug('nvim-lua/plenary.nvim') -- required for cokeline
       plug('nvim-tree/nvim-web-devicons') -- optional
       plug('stevearc/resession.nvim') -- optional
@@ -112,9 +112,9 @@ require('white-chocolate').setup()
     require('white-chocolate').setup()
   end,
   dependencies = {
-    { 'windwp/windline.nvim' }, -- optional
+    { 'windwp/windline.nvim' }, -- optional, recommended
     {
-      'noib3/nvim-cokeline', -- optional
+      'noib3/nvim-cokeline', -- optional, recommended
       dependencies = {
         { 'nvim-lua/plenary.nvim' }, -- required for cokeline
         { 'nvim-tree/nvim-web-devicons' }, -- optional
@@ -162,6 +162,8 @@ require('white-chocolate').setup {
   },
 }
 ```
+
+I recommend to enable `setup_statusline` and `setup_bufferline` (requires optional dependecies).
 
 ### Usage
 
