@@ -132,7 +132,7 @@ local function build_custom_components(default_components, colors, state)
       if default_components.lsp.check_lsp(bufnr) then
         return {
           { ' ', colors.lsp },
-          { default_components.lsp.lsp_name() },
+          { default_components.lsp.lsp_name { icon = '󰒓 ' } },
           { ' ' },
         }
       else
