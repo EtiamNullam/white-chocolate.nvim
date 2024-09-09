@@ -286,6 +286,7 @@ local function assemble_statusline(default_components, custom_components, colors
       custom_components.git,
       custom_components.yank_preview,
       custom_components.divider,
+      { ' ' },
       { default_components.vim.search_count(), colors.search },
       custom_components.working_directory,
     },
