@@ -34,7 +34,7 @@ local function define_colors()
 end
 
 ---@nodiscard
-local function build_custom_components(default_components, colors, state)
+local function build_custom_components(default_components, colors, windline)
   local cache_utils = require('windline.cache_utils')
   local custom_components = {}
 
@@ -51,7 +51,7 @@ local function build_custom_components(default_components, colors, state)
     },
     text = function()
       return {
-        { ' ' .. state.mode[1] .. ' ', state.mode[2] },
+        { ' ' .. windline.state.mode[1] .. ' ', windline.state.mode[2] },
       }
     end,
   }
@@ -316,8 +316,6 @@ end
 local function setup(windline, theme_colors)
   vim.o.laststatus = 3
 
-  local state = _G.WindLine.state
-
   local default_components = {
     basic = require('windline.components.basic'),
     vim = require('windline.components.vim'),
@@ -326,7 +324,7 @@ local function setup(windline, theme_colors)
   }
 
   local colors = define_colors()
-  local custom_components = build_custom_components(default_components, colors, state)
+  local custom_components = build_custom_components(default_components, colors, windline)
   local statusline = assemble_statusline(default_components, custom_components, colors)
   local winbar = assemble_winbar(default_components, custom_components, colors)
 
