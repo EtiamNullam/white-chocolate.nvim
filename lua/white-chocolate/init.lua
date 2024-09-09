@@ -24,7 +24,7 @@ M.default_options = {
 }
 
 ---@type WhiteChocolate.InitOptions
-local last_configuration = M.default_options
+local last_options = M.default_options
 
 ---@param options WhiteChocolate.InitOptions
 local function apply_options(options)
@@ -80,7 +80,7 @@ function M.setup(options)
   options = options or {}
 
   local base_options = options.use_previous_options
-    and last_configuration
+    and last_options
     or M.default_options
 
   ---@type WhiteChocolate.InitOptions
@@ -100,7 +100,7 @@ function M.setup(options)
     end
   end
 
-  last_configuration = options
+  last_options = options
 end
 
 return M
