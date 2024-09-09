@@ -14,12 +14,18 @@ local function define_colors()
       command = { 'background', 'special' },
     },
     status_line = { 'background', 'foreground' },
+    lsp = {
+      panel = { 'background', 'action' },
+      error = { 'background', 'error' },
+      warning = { 'background', 'change' },
+      info = { 'background', 'info' },
+      hint = { 'foreground', 'floating_window' },
+    },
   }
 
   colors.search = colors.vi.replace
   colors.modified = colors.vi.replace
   colors.readonly = colors.vi.visual
-  colors.lsp = colors.vi.insert
 
   return colors
 end
@@ -129,11 +135,17 @@ local function build_custom_components(default_components, colors, state)
   custom_components.lsp = {
     name = 'lsp',
     text = function(bufnr)
+      local padded_format = ' %s '
+
       if default_components.lsp.check_lsp(bufnr) then
         return {
-          { ' ', colors.lsp },
+          { ' ', colors.lsp.panel },
           { default_components.lsp.lsp_name { icon = '󰒓 ' } },
           { ' ' },
+          { default_components.lsp.lsp_error { format = padded_format }, colors.lsp.error },
+          { default_components.lsp.lsp_warning { format = padded_format }, colors.lsp.warning },
+          { default_components.lsp.lsp_info { format = padded_format }, colors.lsp.info },
+          { default_components.lsp.lsp_hint { format = padded_format }, colors.lsp.hint },
         }
       else
         return ''
