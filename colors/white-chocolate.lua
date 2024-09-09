@@ -1,1 +1,3 @@
-require('white-chocolate').setup()
+require('white-chocolate').setup {
+  use_previous_options = true,
+}

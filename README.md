@@ -140,6 +140,7 @@ require('white-chocolate').setup {
   setup_bufferline = false, -- configures bufferline and tabline using optional dependency 'noib3/nvim-cokeline'
   setup_statusline = false, -- configures statusline and winbar using 'windwp/windline.nvim'
   fix_terminal_background = false, -- remove padding in terminal around neovim instance
+  use_previous_options = false, -- apply options on top of previous options
   color_overrides = {
     background = '#fffdfb',
     foreground = '#643d2c',
