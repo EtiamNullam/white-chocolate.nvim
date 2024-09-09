@@ -91,7 +91,7 @@ function M.setup(options)
       vim.api.nvim_command('do ColorSchemePre')
     end
 
-    vim.api.nvim_command('colorscheme default')
+    vim.api.nvim_command('noautocmd colorscheme default')
 
     apply_options(options)
 
