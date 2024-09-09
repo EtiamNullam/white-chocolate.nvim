@@ -317,6 +317,12 @@ function M.create(colors, options)
     },
     {
       {
+        '@punctuation',
+      },
+      { fg = colors.special }
+    },
+    {
+      {
         'IlluminatedWordRead',
         'IlluminatedWordText',
         'IlluminatedWordWrite',
