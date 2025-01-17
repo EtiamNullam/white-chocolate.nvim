@@ -10,7 +10,7 @@
 
 It's an opinionated **bright** theme for [`neovim`](https://neovim.io) containing my custom color scheme and configurations for theme-related plugins.
 
-![image](https://user-images.githubusercontent.com/10875340/172979919-9a9ad2fb-e0b7-45b5-ac5d-606a6f62219a.png)
+![image](https://github.com/user-attachments/assets/0f9a664a-8982-4325-bf26-1e68a11aff57)
 
 Every bright color scheme that I've tried had some issues, so I've decided to make my own. At first it based on [`RRethy/nvim-base16`](https://github.com/RRethy/nvim-base16).
 
